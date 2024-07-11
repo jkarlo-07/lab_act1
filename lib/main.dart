@@ -10,30 +10,45 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: DefaultTabController(
         length: 5,
         child: Scaffold(
           appBar: AppBar(
-            backgroundColor: Colors.pink[100],
+            backgroundColor: const Color.fromARGB(255, 0, 173, 181),
             bottom: const TabBar(
+              unselectedLabelColor: Color.fromARGB(255, 34, 40, 49),
+              labelColor: Color.fromARGB(255, 238, 238, 238),
+              indicatorColor: Color.fromARGB(255, 238, 238, 238),
               tabs: [
-                Tab(icon: Icon(Icons.person)),
+                Tab(icon: Icon(Icons.person_3)),
                 Tab(icon: Icon(Icons.school)),
                 Tab(icon: Icon(Icons.star)),
                 Tab(icon: Icon(Icons.favorite)),
-                Tab(icon: Icon(Icons.contact_page)),
+                Tab(icon: Icon(Icons.phone)),
               ],
             ),
-            title: const Text('Lab Activity 1'),
+            title: const Text('Lab Activity 1',
+                style: TextStyle(
+                    color: Color.fromARGB(255, 34, 40, 49),
+                    fontSize: 30,
+                    fontFamily: "Playfair",
+                    fontWeight: FontWeight.bold)),
           ),
-          body: const TabBarView(
-            children: [
-              PersonalInfoTab(),
-              EducationalBackgroundTab(),
-              SkillsTab(),
-              InterestTab(),
-              ContactTab(),
-            ],
+          body: Container(
+            color: const Color.fromARGB(255, 34, 40, 49),
+            child: const DefaultTextStyle(
+              style: TextStyle(color: Color.fromARGB(255, 238, 238, 238), fontFamily: "Playfair",),
+              child: TabBarView(
+                children: [
+                  PersonalInfoTab(),
+                  EducationalBackgroundTab(),
+                  SkillsTab(),
+                  InterestTab(),
+                  ContactTab(),
+                ],
+              ),
+            ),
           ),
         ),
       ),
@@ -62,7 +77,7 @@ class PersonalInfoTab extends StatelessWidget {
           ),
           Container(
             decoration: BoxDecoration(
-              border: Border.all(color: Colors.black, width: 2),
+              border: Border.all(color: const Color.fromARGB(255, 238, 238, 238), width: 2),
             ),
             child: Image.asset(
               'assets/images/portrait.png',
@@ -102,6 +117,24 @@ class PersonalInfoTab extends StatelessWidget {
               ),
             ],
           ),
+          const Row(
+            children: [
+              Text(
+                "Gender:",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                "Male",
+                style: TextStyle(fontSize: 20),
+              ),
+            ],
+          ),
+           const SizedBox(
+                height: 10,
+              ),
           const Text(
             "Bio:",
             style: TextStyle(
@@ -266,6 +299,12 @@ class SkillsTab extends StatelessWidget {
               fontSize: 20,
             ),
           ),
+           Text(
+            "Tools: Git",
+            style: TextStyle(
+              fontSize: 20,
+            ),
+          ),
           SizedBox(
             height: 10.0,
           ),
@@ -406,7 +445,7 @@ class InterestTab extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 20.0, // Adjust this value based on your preference
+              height: 20.0, 
             ),
           ],
         ),
@@ -450,6 +489,7 @@ class ContactTab extends StatelessWidget {
               ),
             ],
           ),
+          SizedBox(height: 10,),
           Row(
             children: [
               Text(
@@ -465,6 +505,7 @@ class ContactTab extends StatelessWidget {
               ),
             ],
           ),
+          SizedBox(height: 10,),
           Row(
             children: [
               Text(
@@ -480,6 +521,7 @@ class ContactTab extends StatelessWidget {
               ),
             ],
           ),
+          SizedBox(height: 10,),
           Row(
             children: [
               Text(
@@ -495,6 +537,7 @@ class ContactTab extends StatelessWidget {
               ),
             ],
           ),
+          SizedBox(height: 10,),
           Row(
             children: [
               Text(
