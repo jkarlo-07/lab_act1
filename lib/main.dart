@@ -282,17 +282,18 @@ class SkillsTab extends StatelessWidget {
             ),
           ),
           Text(
-            "Web Development: HTML, CSS, JavaScript, PHP",
-            style: TextStyle(
-              fontSize: 20,
-            ),
-          ),
-          Text(
             "Databases: MySQL, PostgreSQL",
             style: TextStyle(
               fontSize: 20,
             ),
           ),
+          Text(
+            "Web Development: HTML, CSS, JavaScript, PHP",
+            style: TextStyle(
+              fontSize: 20,
+            ),
+          ),
+          
           Text(
             "Frameworks: Django, React",
             style: TextStyle(
@@ -331,7 +332,13 @@ class SkillsTab extends StatelessWidget {
             ),
           ),
           Text(
-            "Teamwork and Collaboration",
+            "Teamwork",
+            style: TextStyle(
+              fontSize: 20,
+            ),
+          ),
+          Text(
+            "Collaboration",
             style: TextStyle(
               fontSize: 20,
             ),
@@ -474,6 +481,21 @@ class ContactTab extends StatelessWidget {
           SizedBox(
             height: 20.0,
           ),
+           Row(
+            children: [
+              Text(
+                "Phone Number:",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                "09294439475",
+                style: TextStyle(fontSize: 20),
+              ),
+            ],
+          ),
           Row(
             children: [
               Text(
@@ -506,21 +528,7 @@ class ContactTab extends StatelessWidget {
             ],
           ),
           SizedBox(height: 10,),
-          Row(
-            children: [
-              Text(
-                "Phone Number:",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Text(
-                "09294439475",
-                style: TextStyle(fontSize: 20),
-              ),
-            ],
-          ),
+         
           SizedBox(height: 10,),
           Row(
             children: [
